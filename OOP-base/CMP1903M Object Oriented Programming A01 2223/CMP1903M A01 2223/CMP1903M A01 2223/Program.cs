@@ -23,7 +23,7 @@ namespace CMP1903M_A01_2223
             Console.WriteLine("Fisher-Yates Shuffle");
 
             Console.WriteLine("One Deal:");
-            pack.shuffleCardPack(0);
+            pack.shuffleCardPack(1);
             List<Card> cards0 = pack.DealCard(1);
             foreach (Card card in cards0)
             {
@@ -54,7 +54,7 @@ namespace CMP1903M_A01_2223
             Console.WriteLine();
 
             Console.WriteLine("Multiple Deals:");
-            pack.shuffleCardPack(3);
+            pack.shuffleCardPack(2);
             List<Card> cards3 = pack.DealCard(5);
             foreach (Card card in cards3)
             {
@@ -64,7 +64,7 @@ namespace CMP1903M_A01_2223
             // test no shuffle
             Console.WriteLine("No Shuffle");
 
-            pack.shuffleCardPack(5);
+            pack.shuffleCardPack(0);
             List<Card> cards5 = pack.DealCard(5);
             foreach (Card card in cards5)
             {

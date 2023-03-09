@@ -26,10 +26,10 @@ namespace CMP1903M_A01_2223
         //Base for the Card class.
 
         //The 'set' methods for these properties could have some validation
-        public SuitType Mysuit { get; set; }
+        public SuitType Mysuit { get; set; } 
         public ValueType Myvalue { get; set; }
 
-        public Card(SuitType suit, ValueType value)
+        public Card(SuitType suit, ValueType value) //Constructor to set SuitType and ValueType
         {
             Mysuit = suit;
             Myvalue = value;
