@@ -13,12 +13,12 @@ namespace CMP1903M_A01_2223
         public Pack()
         {
             // Initialise the card pack here
-            pack = new List<Card>();
+            pack = new List<Card>(); //Creates a list(pack) where all the cards will be added to
             foreach (var suit in Enum.GetValues(typeof(SuitType)))
             {
                 foreach (var value in Enum.GetValues(typeof(ValueType)))
                 {
-                    pack.Add(new Card((SuitType)suit, (ValueType)value));
+                    pack.Add(new Card((SuitType)suit, (ValueType)value)); //Adds each card to the list(pack)
                 }
             }
 
@@ -76,10 +76,15 @@ namespace CMP1903M_A01_2223
                     return false;
             }
         }
-
+        
+        
         public Card Deal()
         {
             //Deals one card
+            if (pack.Count == 0)
+            {
+                throw new InvalidOperationException("Cannot deal from an empty pack."); //Informs user that the pack is empty hence no more deals can be made
+            }
             Card card = pack[0];
             pack.RemoveAt(0);
             return card;
@@ -88,6 +93,10 @@ namespace CMP1903M_A01_2223
         public List<Card> DealCard(int amount)
         {
             //Deals the number of cards specified by 'amount'
+            if (amount > pack.Count)
+            {
+                throw new InvalidOperationException("Cannot deal more cards than what is in the pack."); //Informs the user that the number of cards its trying to deal is more than the number of cards in the pack
+            }
             List<Card> cards = new List<Card>();
             for (int i = 0; i < amount; i++)
             {
